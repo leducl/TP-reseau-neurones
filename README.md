@@ -1,3 +1,5 @@
+lien du tp : https://sleek-think.ovh/enseignement/neural-network-perceptron/ 
+
 Objectifs du TP
 Comprendre le fonctionnement du perceptron simple
 Implémenter l'algorithme du perceptron
