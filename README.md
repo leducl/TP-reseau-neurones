@@ -1,73 +1,40 @@
 lien du tp : https://sleek-think.ovh/enseignement/neural-network-perceptron/ 
 
-# TP Perceptron
-
-## Table des matières
-1. [Objectifs du TP](#objectifs-du-tp)  
-2. [Livrables attendus](#livrables-attendus)  
-   - [Code](#code)  
-   - [Rapport](#rapport)  
-   - [Visualisations](#visualisations)  
-3. [Instructions de mise en route](#instructions-de-mise-en-route)  
-4. [Licence](#licence)  
-
----
-
 ## Objectifs du TP
 
-- Comprendre le fonctionnement du **perceptron simple**  
-- Implémenter l’**algorithme du perceptron**  
-- Analyser les **limites** du perceptron sur des problèmes **non-linéairement séparables**  
-- Appliquer le perceptron à des **données réelles**  
-
----
+- Comprendre le fonctionnement du perceptron simple  
+- Implémenter l’algorithme du perceptron  
+- Analyser les limites du perceptron sur des problèmes non-linéairement séparables  
+- Appliquer le perceptron à des données réelles  
 
 ## Livrables attendus
 
 ### 1. Code
 
-- **`PerceptronSimple`**  
-  - Implémentation complète de la classe  
-  - Méthodes d’entraînement (`fit`), de prédiction (`predict`), et d’évaluation  
-- **`PerceptronMultiClasse`**  
-  - Implémentation du perceptron pour classification multiclasse (stratégie un-contre-tous ou un-contre-un)  
-- **Scripts de test et de visualisation**  
-  - Exemples d’application sur données synthétiques (fonctions logiques)  
-  - Tests sur jeux de données réelles (ex. Iris, MNIST simplifié)  
-  - Génération de graphiques de convergence et de frontières de décision  
+- Implémentation complète de la classe **PerceptronSimple**  
+- Implémentation de la classe **PerceptronMultiClasse**  
+- Scripts de test et de visualisation  
 
 ### 2. Rapport
 
-1. **Introduction**  
-   - Contexte du TP  
-   - Objectifs pédagogiques  
-
-2. **Méthodes**  
-   - Principe du perceptron simple  
-   - Algorithme d’apprentissage  
-   - Extension au multi-classe  
-
-3. **Résultats**  
-   - Tests sur fonctions logiques (ET, OU, XOR…)  
-   - Analyse de la convergence (courbes d’erreur vs itérations)  
-   - Évaluation sur données réelles  
-
-4. **Discussion**  
-   - Limites du perceptron (non-linéarité, sensibilité au jeu de données, choix du pas d’apprentissage…)  
-   - Cas d’usage appropriés et alternatives (SVM, réseaux de neurones multilayer)  
-
-5. **Conclusion**  
-   - Synthèse des apprentissages  
-   - Perspectives d’amélioration  
+- **Introduction** : Contexte et objectifs  
+- **Méthodes** : Description des algorithmes implémentés  
+- **Résultats** :  
+  - Tests sur fonctions logiques  
+  - Analyse de convergence  
+  - Évaluation sur données réelles  
+- **Discussion** :  
+  - Limites du perceptron  
+  - Cas d’usage appropriés  
+- **Conclusion** : Synthèse des apprentissages  
 
 ### 3. Visualisations
 
-- **Graphiques de convergence**  
-- **Visualisation des droites de séparation**  
-- **Matrices de confusion**  
-- **Comparaisons de performances**  
+- Graphiques de convergence  
+- Visualisation des droites de séparation  
+- Matrices de confusion  
+- Comparaisons de performances  
 
----
 
 
 Introduction
