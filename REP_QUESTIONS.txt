@@ -1,0 +1,141 @@
+---------------- EXERCICE 1 ----------------
+
+Voir code
+
+---------------- EXERCICE 2 ----------------
+
+1. Pourquoi la fonction de Heaviside pose-t-elle problème pour l'apprentissage par gradient ?
+Parce qu’elle n’est pas  différentiable : sa dérivée est nulle partout sauf au point de discontinuité.
+Donc l'algorithme de rétropropagation  ne peut pas s'en servir pour ajuster les poids.
+
+2. Quand utiliser sigmoid vs tanh ?
+Sigmoid : utile pour des sorties entre 0 et 1 (ex : probabilité), mais souffre de saturation (vanishing gradient).
+Tanh : centrée autour de 0 (sortie entre -1 et 1), ce qui rend l’apprentissage plus stable que sigmoid dans beaucoup de cas.
+
+3. Pourquoi ReLU est-elle si populaire dans les réseaux profonds ?
+Simple à calculer
+Permet d’éviter partiellement le problème du vanishing gradient
+Active seulement une partie des neurones
+
+4. Quel est l'avantage du Leaky ReLU ?
+Il corrige un défaut du ReLU : quand l’entrée est négative, ReLU renvoie 0 → les poids ne sont jamais mis à jour.
+Leaky ReLU permet un léger gradient négatif, donc continue à apprendre même pour des valeurs négatives.
+
+---------------- EXERCICE 3 ----------------
+
+Que se passe-t-il si 𝜂 est trop grand ?
+Si 𝜂 est trop grand, l’apprentissage devient instable et le perceptron peut ne jamais converger.
+
+Et s’il est trop petit ?
+Si 𝜂 est trop petit, l’apprentissage est très lent et peut stagner.
+
+Existe-t-il une valeur idéale de 𝜂 ?
+Il n’existe pas de valeur idéale universelle de 𝜂, cela dépend du problème.
+
+Peut-on faire varier 𝜂 au cours du temps ?
+Oui, on peut faire varier 𝜂 au cours du temps.
+
+Quelle stratégie pouvez-vous imaginer ?
+Une bonne stratégie est de commencer avec un grand 𝜂, puis de le réduire progressivement.
+
+---------------- EXERCICE 4 ----------------
+
+Voir code
+
+---------------- EXERCICE 5 ----------------
+
+Combien d'époques sont nécessaires pour converger ?
+Pour AND, le perceptron converge en 5 à 15 époques en général.
+Pour OR, la convergence est encore plus rapide, souvent en 1 à 10 époques.
+Le nombre exact dépend du taux d’apprentissage et de l’initialisation aléatoire des poids.
+
+Visualisez la droite de séparation trouvée.
+Voir code
+
+Le perceptron converge-t-il toujours vers la même solution ? (ie les mêmes poids)
+Non, le perceptron ne converge pas toujours vers les mêmes poids.
+Comme les poids sont initialisés aléatoirement, plusieurs droites peuvent séparer les données correctement.
+Cela n’empêche pas le perceptron de trouver une bonne solution, tant que les données sont linéairement séparables.
+
+----------------EXERCICE 6 ----------------
+
+Quelles sont vos constatations ?
+Le perceptron ne parvient pas à converger avec les données XOR.
+Il tourne en boucle ou stagne sans jamais réussir à séparer correctement les classes.
+La précision reste autour de 50 %, même après de nombreuses époques.
+
+Quel lien peut-on faire avec la notion de séparabilité linéaire évoquée plus tôt dans le cours ?
+Le problème XOR n’est pas linéairement séparables.
+Aucune droite ne peut séparer les sorties -1 et 1 dans le plan.
+Cela viole la condition fondamentale pour qu’un perceptron simple fonctionne correctement.
+
+---------------- EXERCICE 7 ----------------
+
+Lancez plusieurs fois votre programme, que constatez-vous sur la droite apprise ?
+Quand on lance plusieurs fois le programme,
+la droite apprise par le perceptron change pas ou du moins visuellement je ne vois aucunes differences
+
+---------------- EXERCICE 8 ----------------
+
+Quel comportement observez-vous lorsque n est très petit ?
+quand n tres petit : apprentissage tres lent, erreurs baissent doucement
+
+Que se passe-t-il lorsque n est trop grand ?
+quand n trop grand : poids oscillent, pas de convergence
+
+Existe-t-il un n optimal dans votre cas ?
+oui, un n intermediaire (par ex 0.01) marche mieux ici
+
+Comment la structure des données (dispersion, bruit…) peut-elle interagir avec n ?
+plus de dispersion ou de bruit → faut n plus petit pour pas diverger
+
+---------------- EXERCICE 9 ----------------
+
+Cohérence des prédictions : Que se passe-t-il si plusieurs perceptrons prédisent positivement pour le même exemple ?
+on compare les scores bruts et on choisit la classe au score le plus élevé.
+
+Gestion des ambiguïtés : Comment gérer le cas où aucun perceptron ne prédit positivement ?
+comme on prend le max, on retourne quand même la classe moins négative (celle dont le score est le plus grand).
+
+Équilibrage : Comment l'approche "Un contre Tous" gère-t-elle le déséquilibre naturel qu'elle crée ?
+chaque perceptron voit une classe minoritaire vs toutes les autres, donc l’apprentissage peut être biaisé
+on peut compenser en ajustant learning_rate ou en pondérant les exemples
+
+---------------- EXERCICE 10 ----------------
+
+PAS DE QUESTION
+
+---------------- EXERCICE 11 ----------------
+
+Convergence
+Le perceptron converge si les données sont linéairement séparables et si le taux d’apprentissage est suffisamment petit.
+Sinon, il peut osciller sans trouver de solution parfaite.
+
+Initialisation
+L’initialisation n’influence pas la solution finale pour un problème linéairement séparable,
+mais peut affecter le nombre d’itérations nécessaires à la convergence.
+
+Taux d’apprentissage
+On choisit η via une recherche sur grille ou en diminuant η progressivement
+L’ensemble de validation permet d’identifier le meilleur compromis entraînement / validation.
+
+Généralisation
+On évalue la généralisation sur un jeu de test indépendant, jamais utilisé pour l’entraînement ou le réglage d’hyperparamètres.
+On peut également croiser avec la validation croisée pour estimer la variance.
+
+XOR Revisité
+Le problème XOR n’est pas linéairement séparable. Solutions :
+Ajouter une couche cachée
+Transformer l’espace pour rendre les données séparables.
+
+Données bruitées
+Le perceptron est sensible au bruit : il peut apprendre des exemples aberrants et ne plus converger proprement.
+On peut limiter le nombre d’itérations, ajouter un terme de régularisation ou faire du nettoyage / filtrage du bruit.
+
+Classes déséquilibrées
+Si une classe est minoritaire, le perceptron aura tendance à privilégier la classe majoritaire.
+Solutions : pondérer les mises à jour, sous-échantillonner la majorité ou sur-échantillonner la minorité.
+
+Normalisation
+Toujours normaliser les données avant l’entraînement :
+cela accélère la convergence et assure que chaque caractéristique contribue de manière équitable aux mises à jour.
