@@ -35,8 +35,9 @@ lien du tp : https://sleek-think.ovh/enseignement/neural-network-perceptron/
 - Matrices de confusion  
 - Comparaisons de performances  
 
-
-
+-----------------------------
+---------- RAPPORT ----------
+-----------------------------
 Introduction
 
 Le fichier README.md rappelle les objectifs pédagogiques : comprendre le fonctionnement du perceptron, l’implémenter et analyser ses limites, puis appliquer l’algorithme sur des données réelles.
