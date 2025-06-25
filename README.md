@@ -70,19 +70,13 @@ Le fichier d’évaluation permet de calculer des matrices de confusion et un ra
 
 Discussion
 
-Les réponses théoriques notent que le perceptron échoue dès que les données ne sont pas linéairement séparables (exemple de XOR) et qu’il est sensible au bruit ou au déséquilibre des classes. Pour compenser, on peut envisager la normalisation des données ou l’ajout d’une couche cachée pour des problèmes non linéaires. On souligne également la dépendance aux taux d’apprentissage et à l’initialisation aléatoire.
+A reecrire ! (
+Les réponses théoriques notent que le perceptron échoue dès que les données ne sont pas linéairement séparables (exemple de XOR) et qu’il est sensible au bruit ou au déséquilibre des classes. Pour compenser, on peut envisager la normalisation des données ou l’ajout d’une couche cachée pour des problèmes non linéaires. On souligne également la dépendance aux taux d’apprentissage et à l’initialisation aléatoire.)
 
-À l’examen du code, plusieurs points restent perfectibles :
-
-les labels sont parfois codés en -1/1 dans les jeux de données tandis que PerceptronSimple attend 0/1;
-
-plusieurs scripts contiennent des lignes parasites de terminal à la fin, ce qui provoquerait une erreur d’exécution (exemple dans charger_donnees_iris_binaire.py) ;
-
-l’évaluation multi‑classe ne peut aboutir tant que les méthodes manquantes ne sont pas implémentées.
+À l’examen du code, plusieurs points pourrait etre surrement etre améliorer mais dans l'ensemble les codes me parraissent correct et réponde au exigences demandé 
 
 Conclusion
 
-Le dépôt fournit l’essentiel des éléments demandés : perceptron simple et multi‑classe, scripts de génération de données, analyse de convergence et réponses théoriques. Néanmoins, pour un fonctionnement complet, il faudrait uniformiser les conventions de labels, corriger les fins de fichier corrompues et ajouter les méthodes requises dans PerceptronMultiClasse. Une fois ces ajustements réalisés, l’ensemble devrait permettre de mener à bien l’évaluation sur les données réelles et de produire les visualisations prévues.
-
+A faire
 
 
